@@ -1,7 +1,8 @@
-<?php namespace CamlicaKitapApi\Model\Cevap\Kategori;
+<?php namespace CamlicaKitapApi\Model\Cevap\Kitap;
 
 use CamlicaKitapApi\Model\Cevap\Temel\GenelCevap;
-use CamlicaKitapApi\Model\Temel\Kategori;
+use CamlicaKitapApi\Model\Temel\Kitap;
+use CamlicaKitapApi\Model\Temel\Yazar;
 
 /**
  * Created by PhpStorm.
@@ -10,10 +11,10 @@ use CamlicaKitapApi\Model\Temel\Kategori;
  * Time: 11:52 AM
  */
 
-class ListeCevap extends GenelCevap
+class YeniEklenenlerCevap extends GenelCevap
 {
 	/**
-	 * @var Kategori[]
+	 * @var Kitap[]
 	 */
 	public $kayitlar = [];
 
@@ -30,25 +31,19 @@ class ListeCevap extends GenelCevap
 		// objeler üzerinde dönelim
 		foreach ($kayitlar as $kayit) {
 
-			$yeniKayit = new Kategori();
+			$yeniKayit = new Kitap();
 
 			// temel bilgileri set edelim
 			$yeniKayit->id = $kayit->id;
 			$yeniKayit->adi = $kayit->adi;
 			$yeniKayit->radi = $kayit->radi;
-			$yeniKayit->kitap_sayisi = $kayit->kitap_sayisi;
+			$yeniKayit->liste_fiyati = $kayit->liste_fiyati;
+			$yeniKayit->uye_fiyati = $kayit->uye_fiyati;
 
 			// alt kategorileri dolduralım
-			foreach ($kayit->alt_kategoriler as $altKayit) {
+			foreach ($kayit->yazarlar as $yazar) {
 
-				$altKategori = new Kategori();
-
-				$altKategori->id = $altKayit->id;
-				$altKategori->adi = $altKayit->adi;
-				$altKategori->radi = $altKayit->radi;
-				$altKategori->kitap_sayisi = $altKayit->kitap_sayisi;
-
-				$yeniKayit->alt_kategoriler[] = $altKategori;
+				$yeniKayit->yazarlar[] = new Yazar($yazar);
 			}
 
 			// yeni kaydı ekleyelim

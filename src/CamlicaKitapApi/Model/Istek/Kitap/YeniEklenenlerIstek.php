@@ -1,8 +1,8 @@
-<?php namespace CamlicaKitapApi\Model\Istek\Kategori;
+<?php namespace CamlicaKitapApi\Model\Istek\Kitap;
 
 use CamlicaKitapApi\Model\Istek\Temel\GenelIstek;
 
-class ListeIstek extends GenelIstek
+class YeniEklenenlerIstek extends GenelIstek
 {
 	public function getArray()
 	{

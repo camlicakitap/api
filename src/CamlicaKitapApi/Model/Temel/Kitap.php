@@ -1,14 +1,15 @@
 <?php namespace CamlicaKitapApi\Model\Temel;
 
-class Kategori
+class Kitap
 {
 	public $id;
 	public $adi;
 	public $radi;
-	public $kitap_sayisi;
+	public $liste_fiyati;
+	public $uye_fiyati;
 
 	/**
-	 * @var Kategori[]
+	 * @var Yazar
 	 */
-	public $alt_kategoriler = [];
+	public $yazarlar = [];
 }
