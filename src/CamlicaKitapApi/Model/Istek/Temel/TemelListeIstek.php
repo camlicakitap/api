@@ -12,7 +12,7 @@ class TemelListeIstek extends TemelIstek
 		return array_merge(parent::getArray(), [
 			'siralama_key' => $this->siralamaKey,
 			'siralama_value' => $this->siralamaValue,
-			'abaslangicdet' => $this->baslangic,
+			'baslangic' => $this->baslangic,
 			'adet' => $this->adet,
 		]);
 	}
