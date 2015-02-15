@@ -5,7 +5,7 @@ use CamlicaKitapApi\Model\Istek\Temel\TemelIstek;
 use Httpful\Request;
 use Httpful\Response;
 
-class KitapBilgi
+class YazarBilgi
 {
 	/**
 	 * @param TemelIstek $istek
@@ -15,7 +15,7 @@ class KitapBilgi
 	public static function get($istek)
 	{
 		/** @var Response $sonuc */
-		$sonuc = Request::post('http://www.camlicakitap.com/api/v2/kitap/bilgi', $istek->getArray())
+		$sonuc = Request::post('http://www.camlicakitap.com/api/v2/yazar/bilgi', $istek->getArray())
 			->sendsType('form')
 			->expectsType('json')
 			->send();

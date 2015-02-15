@@ -1,8 +1,6 @@
-<?php namespace CamlicaKitapApi\Model\Cevap\Kitap;
+<?php namespace CamlicaKitapApi\Model\Cevap\Temel;
 
-use CamlicaKitapApi\Model\Cevap\Temel\TemelCevap;
-
-class BilgiCevap extends TemelCevap
+class TemelBilgiCevap extends TemelCevap
 {
 	/**
 	 * @var int
