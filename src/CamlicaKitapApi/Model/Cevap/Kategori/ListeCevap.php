@@ -17,11 +17,6 @@ class ListeCevap extends GenelCevap
 	 */
 	public $kayitlar = [];
 
-	public function __construct($sonuc)
-	{
-		$this->sonuc = $sonuc;
-	}
-
 	/**
 	 * @param object[] $kayitlar
 	 */

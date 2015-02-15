@@ -17,6 +17,11 @@ abstract class GenelCevap
 	public $sonuc;
 	public $mesaj;
 
+	public function __construct($sonuc)
+	{
+		$this->sonuc = $sonuc;
+	}
+
 	/**
 	 * Sonuç başarılı ise true değilse false.
 	 *

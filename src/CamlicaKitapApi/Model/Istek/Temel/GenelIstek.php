@@ -1,6 +1,6 @@
 <?php namespace CamlicaKitapApi\Model\Istek\Temel;
 
-abstract class GenelIstek
+class GenelIstek
 {
 	/**
 	 * Özel üretilmiş char[32] tipinde bir string.
@@ -12,5 +12,12 @@ abstract class GenelIstek
 	public function __construct($hash)
 	{
 		$this->hash = $hash;
+	}
+
+	public function getArray()
+	{
+		return [
+			'hash' => $this->hash
+		];
 	}
 }
