@@ -1,12 +1,6 @@
 <?php namespace CamlicaKitapApi\Model\Cevap\Temel;
 
-/**
- * Created by PhpStorm.
- * User: irfan
- * Date: 11/2/14
- * Time: 11:53 AM
- */
-abstract class GenelCevap
+class TemelCevap
 {
 	/**
 	 * 1 ise işlem başarılı demektir.

@@ -1,27 +1,27 @@
 <?php namespace CamlicaKitapApi;
 
-use CamlicaKitapApi\Model\Cevap\Kitap\YeniEklenenlerCevap;
-use CamlicaKitapApi\Model\Istek\Kitap\YeniEklenenlerIstek;
+use CamlicaKitapApi\Model\Cevap\Kitap\ListeCevap;
+use CamlicaKitapApi\Model\Istek\Temel\TemelListeIstek;
 use Httpful\Request;
 use Httpful\Response;
 
-class KitapYeniEklenenler
+class KitapListe
 {
 	/**
-	 * @param YeniEklenenlerIstek $istek
+	 * @param TemelListeIstek $istek
 	 *
-	 * @return YeniEklenenlerCevap;
+	 * @return ListeCevap
 	 */
 	public static function get($istek)
 	{
 		/** @var Response $sonuc */
-		$sonuc = Request::post('http://www.camlicakitap.com/api/v2/kitap/yeni_eklenenler', $istek->getArray())
+		$sonuc = Request::post('http://www.camlicakitap.com/api/v2/kitap/liste', $istek->getArray())
 			->sendsType('form')
 			->expectsType('json')
 			->send();
 
 		// yeni bir cevap oluşturalım
-		$cevap = new YeniEklenenlerCevap($sonuc->body->sonuc);
+		$cevap = new ListeCevap($sonuc->body->sonuc);
 
 		// sonucu kontrol edelim
 		if ($cevap->isSonucBasarili()) {

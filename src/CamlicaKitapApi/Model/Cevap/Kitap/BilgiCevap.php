@@ -1,15 +1,8 @@
 <?php namespace CamlicaKitapApi\Model\Cevap\Kitap;
 
-use CamlicaKitapApi\Model\Cevap\Temel\GenelCevap;
+use CamlicaKitapApi\Model\Cevap\Temel\TemelCevap;
 
-/**
- * Created by PhpStorm.
- * User: irfan
- * Date: 11/2/14
- * Time: 11:52 AM
- */
-
-class BilgiCevap extends GenelCevap
+class BilgiCevap extends TemelCevap
 {
 	/**
 	 * @var int

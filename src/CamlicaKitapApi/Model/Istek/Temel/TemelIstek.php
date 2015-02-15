@@ -1,6 +1,6 @@
 <?php namespace CamlicaKitapApi\Model\Istek\Temel;
 
-class GenelIstek
+class TemelIstek
 {
 	/**
 	 * Özel üretilmiş char[32] tipinde bir string.

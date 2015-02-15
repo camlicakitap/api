@@ -1,14 +1,14 @@
 <?php namespace CamlicaKitapApi;
 
 use CamlicaKitapApi\Model\Cevap\Kitap\BilgiCevap;
-use CamlicaKitapApi\Model\Istek\Temel\GenelIstek;
+use CamlicaKitapApi\Model\Istek\Temel\TemelIstek;
 use Httpful\Request;
 use Httpful\Response;
 
 class KitapBilgi
 {
 	/**
-	 * @param GenelIstek $istek
+	 * @param TemelIstek $istek
 	 *
 	 * @return BilgiCevap;
 	 */

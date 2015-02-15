@@ -1,6 +1,6 @@
 <?php namespace CamlicaKitapApi\Model\Cevap\Kategori;
 
-use CamlicaKitapApi\Model\Cevap\Temel\GenelCevap;
+use CamlicaKitapApi\Model\Cevap\Temel\TemelCevap;
 use CamlicaKitapApi\Model\Temel\Kategori;
 
 /**
@@ -10,7 +10,7 @@ use CamlicaKitapApi\Model\Temel\Kategori;
  * Time: 11:52 AM
  */
 
-class ListeCevap extends GenelCevap
+class ListeCevap extends TemelCevap
 {
 	/**
 	 * @var Kategori[]

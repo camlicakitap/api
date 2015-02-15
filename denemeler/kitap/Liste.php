@@ -1,22 +1,22 @@
 <?php
 
-use CamlicaKitapApi\KitapYeniEklenenler;
-use CamlicaKitapApi\Model\Istek\Kitap\YeniEklenenlerIstek;
-
 require_once '../../vendor/autoload.php';
+
+use CamlicaKitapApi\KitapListe;
+use CamlicaKitapApi\Model\Istek\Temel\TemelListeIstek;
 
 error_reporting(E_ALL);
 
 // hash bilgisini buraya yazınız.
 $hash = '';
 
-$istek = new YeniEklenenlerIstek($hash);
+$istek = new TemelListeIstek($hash);
 
 $istek->adet = 10;
 
 try {
 
-	$cevap =  KitapYeniEklenenler::get($istek);
+	$cevap =  KitapListe::get($istek);
 
 	echo '<pre>';
 	print_r($cevap);
