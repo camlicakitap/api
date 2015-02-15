@@ -22,10 +22,21 @@ class KategoriListe
 			->expectsType('json')
 			->send();
 
-		if ($sonuc->body->sonuc == 0)
-			throw new Exception($sonuc->body->mesaj);
+		// yeni bir cevap oluşturalım
+		$listeCevap = new ListeCevap($sonuc->body->sonuc);
 
-		// kayıtları set edelim
-		return new ListeCevap($sonuc->body->kayitlar);
+		// sonucu kontrol edelim
+		if ($listeCevap->sonuc == 0) {
+
+			// mesajı set edelim
+			$listeCevap->mesaj = $sonuc->body->mesaj;
+		} else {
+
+			// kayıtları set edelim
+			$listeCevap->setKayitlar($sonuc->body->kayitlar);
+		}
+
+		// cevabı geri dönelim
+		return $listeCevap;
 	}
 }

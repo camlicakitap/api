@@ -14,12 +14,17 @@ class ListeCevap extends GenelCevap
 	/**
 	 * @var ListeKayitCevap[]
 	 */
-	public $kayitlar = array();
+	public $kayitlar = [];
+
+	public function __construct($sonuc)
+	{
+		$this->sonuc = $sonuc;
+	}
 
 	/**
 	 * @param object[] $kayitlar
 	 */
-	public function __construct($kayitlar)
+	public function setKayitlar($kayitlar)
 	{
 		// objeler üzerinde dönelim
 		foreach ($kayitlar as $kayit) {
