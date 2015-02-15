@@ -37,6 +37,7 @@ class YeniEklenenlerCevap extends GenelCevap
 			$yeniKayit->id = $kayit->id;
 			$yeniKayit->adi = $kayit->adi;
 			$yeniKayit->radi = $kayit->radi;
+			$yeniKayit->resim_uzantisi = $kayit->resim_uzantisi;
 			$yeniKayit->liste_fiyati = $kayit->liste_fiyati;
 			$yeniKayit->uye_fiyati = $kayit->uye_fiyati;
 
