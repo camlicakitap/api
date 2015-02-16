@@ -9,6 +9,7 @@ class TemelIstek
 	 */
 	public $hash;
 
+	public $q;
 	public $kitapId;
 	public $yazarId;
 	public $kategoriId;
@@ -36,6 +37,7 @@ class TemelIstek
 	{
 		return [
 			'hash' => $this->hash,
+			'q' => $this->q,
 			'kitap_id' => $this->kitapId,
 			'yazar_id' => $this->yazarId,
 			'kategori_id' => $this->kategoriId,
