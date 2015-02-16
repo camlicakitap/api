@@ -13,7 +13,7 @@
         }
     ],
     "require": {
-		"nategood/httpful": "0.2.17"
+		"nategood/httpful": "0.2.*"
     },
     "autoload": {
         "psr-4": {
