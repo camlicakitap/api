@@ -1,7 +1,7 @@
 <?php namespace CamlicaKitapApi\Model\Cevap\Kategori;
 
 use CamlicaKitapApi\Model\Cevap\Temel\TemelCevap;
-use CamlicaKitapApi\Model\Temel\Kategori;
+use CamlicaKitapApi\Model\Kategori;
 
 /**
  * Created by PhpStorm.

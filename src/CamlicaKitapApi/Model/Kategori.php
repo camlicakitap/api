@@ -1,4 +1,4 @@
-<?php namespace CamlicaKitapApi\Model\Temel;
+<?php namespace CamlicaKitapApi\Model;
 
 class Kategori
 {

@@ -3,7 +3,7 @@
 require_once '../../vendor/autoload.php';
 
 use CamlicaKitapApi\KitapBilgi;
-use CamlicaKitapApi\Model\Istek\Temel\TemelIstek;
+use CamlicaKitapApi\Model\TemelIstek;
 
 error_reporting(E_ALL);
 

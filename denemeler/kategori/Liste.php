@@ -3,7 +3,7 @@
 require_once '../../vendor/autoload.php';
 
 use CamlicaKitapApi\KategoriListe;
-use CamlicaKitapApi\Model\Istek\Temel\TemelListeIstek;
+use CamlicaKitapApi\Model\TemelIstek;
 
 error_reporting(E_ALL);
 
@@ -11,7 +11,7 @@ error_reporting(E_ALL);
 // hash bilgisini buraya yazınız.
 $hash = '';
 
-$istek = new TemelListeIstek($hash);
+$istek = new TemelIstek($hash);
 
 try {
 

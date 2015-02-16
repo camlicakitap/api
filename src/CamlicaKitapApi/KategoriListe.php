@@ -1,14 +1,14 @@
 <?php namespace CamlicaKitapApi;
 
 use CamlicaKitapApi\Model\Cevap\Kategori\ListeCevap;
-use CamlicaKitapApi\Model\Istek\Temel\TemelListeIstek;
+use CamlicaKitapApi\Model\TemelIstek;
 use Httpful\Request;
 use Httpful\Response;
 
 class KategoriListe
 {
 	/**
-	 * @param TemelListeIstek $istek
+	 * @param TemelIstek $istek
 	 *
 	 * @return ListeCevap;
 	 */

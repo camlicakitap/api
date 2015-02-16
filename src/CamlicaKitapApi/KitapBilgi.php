@@ -1,7 +1,7 @@
 <?php namespace CamlicaKitapApi;
 
 use CamlicaKitapApi\Model\Cevap\Temel\TemelBilgiCevap;
-use CamlicaKitapApi\Model\Istek\Temel\TemelIstek;
+use CamlicaKitapApi\Model\TemelIstek;
 use Httpful\Request;
 use Httpful\Response;
 

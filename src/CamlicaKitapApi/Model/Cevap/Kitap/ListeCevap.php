@@ -2,7 +2,7 @@
 
 use CamlicaKitapApi\Model\Cevap\Temel\TemelListeCevap;
 use CamlicaKitapApi\Model\Cevap\Temel\TemelListeCevapInterface;
-use CamlicaKitapApi\Model\Temel\Kitap;
+use CamlicaKitapApi\Model\Kitap;
 
 class ListeCevap extends TemelListeCevap implements TemelListeCevapInterface
 {
