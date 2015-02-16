@@ -7,7 +7,7 @@ use CamlicaKitapApi\Model\Yazar;
 class DetayCevap extends TemelDetayCevap implements TemelDetayCevapInterface
 {
 	/**
-	 * @param object[] $kayit
+	 * @param object $kayit
 	 */
 	public function setKayit($kayit)
 	{
@@ -15,7 +15,7 @@ class DetayCevap extends TemelDetayCevap implements TemelDetayCevapInterface
 	}
 
 	/**
-	 * @return Yazar[]
+	 * @return Yazar
 	 */
 	public function getKayit()
 	{

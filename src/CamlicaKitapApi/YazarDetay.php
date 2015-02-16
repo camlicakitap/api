@@ -10,7 +10,7 @@ class YazarDetay
 	/**
 	 * @param TemelIstek $istek
 	 *
-	 * @return DetayCevap;
+	 * @return DetayCevap
 	 */
 	public static function get($istek)
 	{
