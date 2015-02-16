@@ -1,8 +1,8 @@
-<?php namespace CamlicaKitapApi\Model\Cevap\Yazar;
+<?php namespace CamlicaKitapApi\Model\Cevap\Kategori;
 
 use CamlicaKitapApi\Model\Cevap\Temel\TemelDetayCevap;
 use CamlicaKitapApi\Model\Cevap\Temel\TemelDetayCevapInterface;
-use CamlicaKitapApi\Model\Yazar;
+use CamlicaKitapApi\Model\Kategori;
 
 /** @noinspection PhpUndefinedClassInspection */
 class DetayCevap extends TemelDetayCevap implements TemelDetayCevapInterface
@@ -12,11 +12,11 @@ class DetayCevap extends TemelDetayCevap implements TemelDetayCevapInterface
 	 */
 	public function setKayit($kayit)
 	{
-		$this->kayit = new Yazar($kayit);
+		$this->kayit = new Kategori($kayit);
 	}
 
 	/**
-	 * @return Yazar
+	 * @return Kategori
 	 */
 	public function getKayit()
 	{

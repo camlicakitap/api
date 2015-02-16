@@ -25,29 +25,8 @@ class ListeCevap extends TemelCevap
 		// objeler üzerinde dönelim
 		foreach ($kayitlar as $kayit) {
 
-			$yeniKayit = new Kategori();
-
-			// temel bilgileri set edelim
-			$yeniKayit->id = $kayit->id;
-			$yeniKayit->adi = $kayit->adi;
-			$yeniKayit->radi = $kayit->radi;
-			$yeniKayit->kitap_sayisi = $kayit->kitap_sayisi;
-
-			// alt kategorileri dolduralım
-			foreach ($kayit->alt_kategoriler as $altKayit) {
-
-				$altKategori = new Kategori();
-
-				$altKategori->id = $altKayit->id;
-				$altKategori->adi = $altKayit->adi;
-				$altKategori->radi = $altKayit->radi;
-				$altKategori->kitap_sayisi = $altKayit->kitap_sayisi;
-
-				$yeniKayit->alt_kategoriler[] = $altKategori;
-			}
-
 			// yeni kaydı ekleyelim
-			$this->kayitlar[] = $yeniKayit;
+			$this->kayitlar[] = new Kategori($kayit);
 		}
 	}
 }
