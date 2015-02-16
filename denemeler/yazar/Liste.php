@@ -14,6 +14,8 @@ $istek = new TemelIstek($hash);
 
 $istek->adet = 10;
 
+// bla
+
 try {
 
 	$cevap =  YazarListe::get($istek);
