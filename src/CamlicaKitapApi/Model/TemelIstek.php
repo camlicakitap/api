@@ -12,6 +12,13 @@ class TemelIstek
 	public $q;
 	public $kitapId;
 	public $yazarId;
+
+	/**
+	 * İstenen yayınevlerinin id bilgilerinini , ile ayrılmış hali. Boş geçilirse yayınevinden bağımsız çalışır.
+	 *
+	 * @var string
+	 */
+	private $yayineviIds;
 	public $kategoriId;
 	public $siralamaKey;
 	public $siralamaValue = 'asc';
@@ -40,11 +47,26 @@ class TemelIstek
 			'q' => $this->q,
 			'kitap_id' => $this->kitapId,
 			'yazar_id' => $this->yazarId,
+			'yayinevi_ids' => $this->getYayineviIdsAsString(),
 			'kategori_id' => $this->kategoriId,
 			'siralama_key' => $this->siralamaKey,
 			'siralama_value' => $this->siralamaValue,
 			'baslangic' => $this->baslangic,
 			'adet' => $this->adet,
 		];
+	}
+
+	public function ekleYayineviId($yayineviId)
+	{
+		// yeni yayınevini ekleyelim
+		$this->yayineviIds[] = intval(trim($yayineviId));
+
+		// mükerrerleri temizleyelim
+		$this->yayineviIds = array_unique($this->yayineviIds);
+	}
+
+	private function getYayineviIdsAsString()
+	{
+		return implode(',', $this->yayineviIds);
 	}
 }
