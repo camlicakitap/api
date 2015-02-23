@@ -14,9 +14,9 @@ class TemelIstek
 	public $yazarId;
 
 	/**
-	 * İstenen yayınevlerinin id bilgilerinini , ile ayrılmış hali. Boş geçilirse yayınevinden bağımsız çalışır.
+	 * İstenen yayınevlerinin id bilgileri. Boş geçilirse yayınevinden bağımsız çalışır.
 	 *
-	 * @var string
+	 * @var array
 	 */
 	private $yayineviIds;
 	public $kategoriId;
@@ -33,6 +33,7 @@ class TemelIstek
 	public function __construct($hash, $baslangic = 0, $adet = 100)
 	{
 		$this->hash = $hash;
+		$this->yayineviIds = [];
 		$this->baslangic = 0;
 		$this->adet = $adet;
 	}
