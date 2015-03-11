@@ -7,7 +7,6 @@ use CamlicaKitapApi\Model\TemelIstek;
 
 error_reporting(E_ALL);
 
-
 // hash bilgisini buraya yazınız.
 $hash = '';
 

@@ -2,8 +2,8 @@
 
 require_once '../../vendor/autoload.php';
 
-use CamlicaKitapApi\KitapListe;
 use CamlicaKitapApi\Model\TemelIstek;
+use CamlicaKitapApi\YazarDetay;
 
 error_reporting(E_ALL);
 
@@ -11,11 +11,11 @@ error_reporting(E_ALL);
 $hash = '';
 
 $istek = new TemelIstek($hash);
-$istek->adet = 10;
+$istek->setYazarId(125);
 
 try {
 
-	$cevap =  KitapListe::get($istek);
+	$cevap = YazarDetay::get($istek);
 
 	echo '<pre>';
 	print_r($cevap);

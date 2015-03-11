@@ -57,6 +57,11 @@ class TemelIstek
 		];
 	}
 
+	/**
+	 * yayinevi_ids parametresine yeni yayınevi ekler
+	 *
+	 * @param int $yayineviId
+	 */
 	public function ekleYayineviId($yayineviId)
 	{
 		// yeni yayınevini ekleyelim
@@ -69,5 +74,35 @@ class TemelIstek
 	private function getYayineviIdsAsString()
 	{
 		return implode(',', $this->yayineviIds);
+	}
+
+	/**
+	 * kategori_id parametresini set eder.
+	 *
+	 * @param int $kategoriId
+	 */
+	public function setKategoriId($kategoriId)
+	{
+		$this->kategoriId = (int) $kategoriId;
+	}
+
+	/**
+	 * kitap_id parametresini set eder
+	 *
+	 * @param int $kitapId
+	 */
+	public function setKitapId($kitapId)
+	{
+		$this->kitapId = (int) $kitapId;
+	}
+
+	/**
+	 * yazar_id parametresini set eder
+	 *
+	 * @param int $yazarId
+	 */
+	public function setYazarId($yazarId)
+	{
+		$this->yazarId = (int) $yazarId;
 	}
 }

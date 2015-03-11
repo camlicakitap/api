@@ -2,8 +2,8 @@
 
 require_once '../../vendor/autoload.php';
 
-use CamlicaKitapApi\KitapBilgi;
 use CamlicaKitapApi\Model\TemelIstek;
+use CamlicaKitapApi\YazarBilgi;
 
 error_reporting(E_ALL);
 
@@ -14,7 +14,7 @@ $istek = new TemelIstek($hash);
 
 try {
 
-	$cevap =  KitapBilgi::get($istek);
+	$cevap =  YazarBilgi::get($istek);
 
 	echo '<pre>';
 	print_r($cevap);

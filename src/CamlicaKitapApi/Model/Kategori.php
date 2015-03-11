@@ -21,9 +21,14 @@ class Kategori
 		$this->id = $kayit->id;
 		$this->adi = $kayit->adi;
 		$this->radi = $kayit->radi;
-		$this->kitap_sayisi = isset($kayit->kitap_sayisi) ? $kayit->kitap_sayisi : null;
 
-		// alt kategoriler varsa
+		// kitap sayısı
+		if (isset($kayit->kitap_sayisi)) {
+
+			$this->kitap_sayisi = $kayit->kitap_sayisi;
+		}
+
+		// alt kategoriler
 		if (isset($kayit->alt_kategoriler)) {
 
 			// alt kategorileri dolduralım

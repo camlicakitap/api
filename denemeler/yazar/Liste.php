@@ -11,7 +11,6 @@ error_reporting(E_ALL);
 $hash = '';
 
 $istek = new TemelIstek($hash);
-
 $istek->adet = 10;
 
 // bla
