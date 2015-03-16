@@ -71,6 +71,19 @@ class TemelIstek
 		$this->yayineviIds = array_unique($this->yayineviIds);
 	}
 
+	/**
+	 * @param array $yayineviIds
+	 */
+	public function addYayineviIds(array $yayineviIds = [])
+	{
+		// yayın evi ids üzerinde dönelim
+		foreach ($yayineviIds as $yayineviId) {
+
+			// aktif yayınevini ekleyelim
+			self::ekleYayineviId($yayineviId);
+		}
+	}
+
 	private function getYayineviIdsAsString()
 	{
 		return implode(',', $this->yayineviIds);
