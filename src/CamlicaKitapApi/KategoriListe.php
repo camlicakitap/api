@@ -15,7 +15,7 @@ class KategoriListe
 	public static function get($istek)
 	{
 		/** @var Response $sonuc */
-		$sonuc = Request::post('http://www.camlicakitap.com/api/v2/kategori/liste', $istek->getArray())
+		$sonuc = Request::post('https://www.camlicakitap.com/api/v2/kategori/liste', $istek->getArray())
 			->sendsType('form')
 			->expectsType('json')
 			->send();
@@ -24,15 +24,17 @@ class KategoriListe
 		$cevap = new ListeCevap($sonuc->body->sonuc);
 
 		// sonucu kontrol edelim
-		if ($cevap->sonuc == 0) {
+        if ($cevap->isSonucBasarili()) {
 
-			// mesajı set edelim
-			$cevap->mesaj = $sonuc->body->mesaj;
-		} else {
+            // kayıtları set edelim
+            $cevap->setKayitlar($sonuc->body->kayitlar);
 
-			// kayıtları set edelim
-			$cevap->setKayitlar($sonuc->body->kayitlar);
-		}
+        } else {
+
+            // mesajı set edelim
+            $cevap->mesaj = $sonuc->body->mesaj;
+
+        }
 
 		// cevabı geri dönelim
 		return $cevap;

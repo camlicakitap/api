@@ -15,7 +15,7 @@ class KitapListe
 	public static function get($istek)
 	{
 		/** @var Response $sonuc */
-		$sonuc = Request::post('http://www.camlicakitap.com/api/v2/kitap/liste', $istek->getArray())
+		$sonuc = Request::post('https://www.camlicakitap.com/api/v2/kitap/liste', $istek->getArray())
 			->sendsType('form')
 			->expectsType('json')
 			->send();

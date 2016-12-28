@@ -4,7 +4,6 @@ use CamlicaKitapApi\Model\Cevap\Temel\TemelDetayCevap;
 use CamlicaKitapApi\Model\Cevap\Temel\TemelDetayCevapInterface;
 use CamlicaKitapApi\Model\Yazar;
 
-/** @noinspection PhpUndefinedClassInspection */
 class DetayCevap extends TemelDetayCevap implements TemelDetayCevapInterface
 {
 	/**

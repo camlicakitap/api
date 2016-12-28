@@ -15,7 +15,7 @@ class KategoriDetay
 	public static function get($istek)
 	{
 		/** @var Response $sonuc */
-		$sonuc = Request::post('http://www.camlicakitap.com/api/v2/kategori/detay', $istek->getArray())
+		$sonuc = Request::post('https://www.camlicakitap.com/api/v2/kategori/detay', $istek->getArray())
 			->sendsType('form')
 			->expectsType('json')
 			->send();
