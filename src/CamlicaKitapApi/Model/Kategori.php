@@ -2,40 +2,40 @@
 
 class Kategori
 {
-	public $id;
-	public $adi;
-	public $radi;
-	public $kitap_sayisi;
+    public $id;
+    public $adi;
+    public $radi;
+    public $kitap_sayisi;
 
-	/**
-	 * @var Kategori[]
-	 */
-	public $alt_kategoriler = [];
+    /**
+     * @var Kategori[]
+     */
+    public $alt_kategoriler = [];
 
-	/**
-	 * @param object $kayit
-	 */
-	public function __construct($kayit)
-	{
-		// temel bilgileri set edelim
-		$this->id = $kayit->id;
-		$this->adi = $kayit->adi;
-		$this->radi = $kayit->radi;
+    /**
+     * @param object $kayit
+     */
+    public function __construct($kayit)
+    {
+        // temel bilgileri set edelim
+        $this->id = $kayit->id;
+        $this->adi = $kayit->adi;
+        $this->radi = $kayit->radi;
 
-		// kitap sayısı
-		if (isset($kayit->kitap_sayisi)) {
+        // kitap sayısı
+        if (isset($kayit->kitap_sayisi)) {
 
-			$this->kitap_sayisi = $kayit->kitap_sayisi;
-		}
+            $this->kitap_sayisi = $kayit->kitap_sayisi;
+        }
 
-		// alt kategoriler
-		if (isset($kayit->alt_kategoriler)) {
+        // alt kategoriler
+        if (isset($kayit->alt_kategoriler)) {
 
-			// alt kategorileri dolduralım
-			foreach ($kayit->alt_kategoriler as $altKayit) {
+            // alt kategorileri dolduralım
+            foreach ($kayit->alt_kategoriler as $altKayit) {
 
-				$this->alt_kategoriler[] = new Kategori($altKayit);
-			}
-		}
-	}
+                $this->alt_kategoriler[] = new Kategori($altKayit);
+            }
+        }
+    }
 }

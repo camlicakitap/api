@@ -2,73 +2,84 @@
 
 class Kitap
 {
-	public $id;
-	public $adi;
-	public $radi;
+    public $id;
+    public $adi;
+    public $radi;
 
-	public $sayfa;
-	public $stok_bilgisi;
-	public $boyut;
-	public $isbn;
-	public $detay;
-	public $resim_uzantisi;
-	public $liste_fiyati;
-	public $uye_fiyati;
+    public $sayfa;
+    public $stok_bilgisi;
+    public $boyut;
+    public $isbn;
+    public $detay;
+    public $resim_uzantisi;
+    public $liste_fiyati;
+    public $uye_fiyati;
 
-	/**
-	 * @var Kategori
-	 */
-	public $kategori;
+    /**
+     * @var Yayinevi
+     */
+    public $yayinevi;
 
-	/**
-	 * @var Dil
-	 */
-	public $dil;
+    /**
+     * @var Kategori
+     */
+    public $kategori;
 
-	/**
-	 * @var Yazar[]
-	 */
-	public $yazarlar = [];
+    /**
+     * @var Dil
+     */
+    public $dil;
 
-	/**
-	 * @param object $kayit
-	 */
-	public function __construct($kayit)
-	{
-		// temel bilgileri set edelim
-		$this->id = $kayit->id;
-		$this->adi = $kayit->adi;
-		$this->radi = $kayit->radi;
+    /**
+     * @var Yazar[]
+     */
+    public $yazarlar = [];
 
-		$this->sayfa = isset($kayit->sayfa) ? $kayit->sayfa : null;
-		$this->stok_bilgisi = isset($kayit->stok_bilgisi) ? $kayit->stok_bilgisi : null;
-		$this->boyut = isset($kayit->boyut) ? $kayit->boyut : null;
-		$this->isbn = isset($kayit->isbn) ? $kayit->isbn : null;
-		$this->detay = isset($kayit->detay) ? $kayit->detay : null;
-		$this->resim_uzantisi = isset($kayit->resim_uzantisi) ? $kayit->resim_uzantisi : null;
-		$this->liste_fiyati = isset($kayit->liste_fiyati) ? $kayit->liste_fiyati : null;
-		$this->uye_fiyati = isset($kayit->uye_fiyati) ? $kayit->uye_fiyati : null;
+    /**
+     * @param object $kayit
+     */
+    public function __construct($kayit)
+    {
+        // temel bilgileri set edelim
+        $this->id = $kayit->id;
+        $this->adi = $kayit->adi;
+        $this->radi = $kayit->radi;
 
-		// kategori varsa
-		if (isset($kayit->kategori)) {
+        $this->sayfa = isset($kayit->sayfa) ? $kayit->sayfa : null;
+        $this->stok_bilgisi = isset($kayit->stok_bilgisi) ? $kayit->stok_bilgisi : null;
+        $this->boyut = isset($kayit->boyut) ? $kayit->boyut : null;
+        $this->isbn = isset($kayit->isbn) ? $kayit->isbn : null;
+        $this->detay = isset($kayit->detay) ? $kayit->detay : null;
+        $this->resim_uzantisi = isset($kayit->resim_uzantisi) ? $kayit->resim_uzantisi : null;
+        $this->liste_fiyati = isset($kayit->liste_fiyati) ? $kayit->liste_fiyati : null;
+        $this->uye_fiyati = isset($kayit->uye_fiyati) ? $kayit->uye_fiyati : null;
 
-			$this->kategori = new Kategori($kayit->kategori);
-		}
+        // yayınevi varsa
+        if (isset($kayit->yayinevi)) {
 
-		// dil varsa
-		if (isset($kayit->dil)) {
+            $this->yayinevi = new Yayinevi($kayit->yayinevi);
+        }
 
-			$this->dil = new Dil($kayit->dil);
-		}
+        // kategori varsa
+        if (isset($kayit->kategori)) {
 
-		// yazarlar varsa
-		if (isset($kayit->yazarlar)) {
+            $this->kategori = new Kategori($kayit->kategori);
+        }
 
-			// yazarlar üzerinde dönelim
-			foreach ($kayit->yazarlar as $yazar) {
+        // dil varsa
+        if (isset($kayit->dil)) {
 
-				$this->yazarlar[] = new Yazar($yazar);
-			}
-		}
-	}
+            $this->dil = new Dil($kayit->dil);
+        }
+
+        // yazarlar varsa
+        if (isset($kayit->yazarlar)) {
+
+            // yazarlar üzerinde dönelim
+            foreach ($kayit->yazarlar as $yazar) {
+
+                $this->yazarlar[] = new Yazar($yazar);
+            }
+        }
+    }
 }
