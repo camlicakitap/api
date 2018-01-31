@@ -14,6 +14,8 @@ class Kitap
     public $resim_uzantisi;
     public $liste_fiyati;
     public $uye_fiyati;
+    public $thumb_image_url;
+    public $original_image_url;
 
     /**
      * @var Yayinevi
@@ -53,6 +55,8 @@ class Kitap
         $this->resim_uzantisi = isset($kayit->resim_uzantisi) ? $kayit->resim_uzantisi : null;
         $this->liste_fiyati = isset($kayit->liste_fiyati) ? $kayit->liste_fiyati : null;
         $this->uye_fiyati = isset($kayit->uye_fiyati) ? $kayit->uye_fiyati : null;
+        $this->thumb_image_url = isset($kayit->thumb_image_url) ? $kayit->thumb_image_url : null;
+        $this->original_image_url = isset($kayit->original_image_url) ? $kayit->original_image_url : null;
 
         // yayınevi varsa
         if (isset($kayit->yayinevi)) {
